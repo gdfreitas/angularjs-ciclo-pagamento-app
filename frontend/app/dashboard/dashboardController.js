@@ -21,6 +21,8 @@
                 vm.total = credit - debt;
             })
         }
+
+        getSummary();
     }
 
 })();
