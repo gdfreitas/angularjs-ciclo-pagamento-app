@@ -3,21 +3,28 @@
         .module('primeiraApp')
         .controller('BillingCycleCtrl', BillingCycleController);
 
-    BillingCycleController.$inject = ['$http', 'msgs', 'tabs']
+    BillingCycleController.$inject = ['$http', '$location', 'msgs', 'tabs']
 
-    function BillingCycleController($http, msgs, tabs) {
+    function BillingCycleController($http, $location, msgs, tabs) {
         const vm = this;
         const url = 'http://localhost:3003/api/billingCycles'
 
         Object.assign(vm, { create, refresh, remove, update, showTabUpdate, showTabDelete, addCredit, cloneCredit, deleteCredit, addDebt, cloneDebt, deleteDebt, calculateValues })
 
         function refresh() {
-            $http.get(url)
+            const page = parseInt($location.search().page) || 1;
+
+            $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`)
                 .success((response) => {
                     vm.billingCycle = { credits: [{}], debts: [{}] }
                     vm.billingCycles = response;
                     calculateValues()
-                    tabs.show(vm, { tabList: true, tabCreate: true })
+
+                    $http.get(`${url}/count`)
+                        .success((response) => {
+                            vm.pages = Math.ceil(response.value / 10)
+                            tabs.show(vm, { tabList: true, tabCreate: true })
+                        })
                 })
         }
 
@@ -34,7 +41,7 @@
         function create() {
             $http.post(url, vm.billingCycle)
                 .success((response) => {
-                    refresh();
+                    // refresh();
                     msgs.addSuccess('Operação realizada com sucesso!')
                 })
                 .error((data) => msgs.addError(data.errors))
