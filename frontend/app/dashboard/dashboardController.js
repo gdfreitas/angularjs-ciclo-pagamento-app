@@ -15,7 +15,9 @@
         function getSummary() {
             const url = 'http://localhost:3003/api/billingSummary' // hardcoded criar constants
 
-            $http.get(url).success(({ credit = 0, debt = 0 }) => { // destructuring e default values
+            $http.get(url).then((response) => { // destructuring e default values
+                const { credit = 0, debt = 0 } = response.data;
+                
                 vm.credit = credit;
                 vm.debt = debt;
                 vm.total = credit - debt;

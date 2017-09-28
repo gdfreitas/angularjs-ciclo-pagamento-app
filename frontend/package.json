@@ -9,25 +9,24 @@
   },
   "author": "gabriel.freitas",
   "license": "ISC",
-  "dependencies": {
-    "admin-lte": "~2.3.6",
-    "angular": "~1.5.8",
-    "angular-animate": "~1.5.8",
-    "angular-toastr": "~2.0.0",
-    "angular-ui-router": "~0.3.1",
-    "font-awesome": "~4.6.3"
-  },
   "devDependencies": {
-    "babel-preset-es2015": "~6.9.0",
-    "fs-extra": "~0.30.0",
-    "gulp": "~3.9.1",
-    "gulp-babel": "~6.1.2",
-    "gulp-concat": "~2.6.0",
-    "gulp-htmlmin": "~2.0.0",
-    "gulp-uglify": "~1.5.3",
-    "gulp-uglifycss": "~1.0.6",
-    "gulp-util": "~3.0.7",
-    "gulp-watch": "~4.3.6",
-    "gulp-webserver": "~0.9.1"
+    "admin-lte": "2.3.11",
+    "angular": "1.6.6",
+    "angular-animate": "1.6.6",
+    "angular-toastr": "2.1.1",
+    "angular-ui-router": "1.0.3",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "font-awesome": "4.7.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "7.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-htmlmin": "3.0.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-uglifycss": "1.0.8",
+    "gulp-util": "3.0.8",
+    "gulp-watch": "4.3.11",
+    "gulp-webserver": "0.9.1",
+    "run-sequence": "2.2.0"
   }
 }

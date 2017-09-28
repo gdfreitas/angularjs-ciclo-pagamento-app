@@ -15,14 +15,14 @@
             const page = parseInt($location.search().page) || 1;
 
             $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`)
-                .success((response) => {
+                .then((response) => {
                     vm.billingCycle = { credits: [{}], debts: [{}] }
-                    vm.billingCycles = response;
+                    vm.billingCycles = response.data;
                     calculateValues()
 
                     $http.get(`${url}/count`)
-                        .success((response) => {
-                            vm.pages = Math.ceil(response.value / 10)
+                        .then((response) => {
+                            vm.pages = Math.ceil(response.data.value / 10)
                             tabs.show(vm, { tabList: true, tabCreate: true })
                         })
                 })
@@ -31,30 +31,30 @@
         function update() {
             const updateUrl = `${url}/${vm.billingCycle._id}`
             $http.put(updateUrl, vm.billingCycle)
-                .success((response) => {
+                .then((response) => {
                     refresh()
                     msgs.addSuccess('Operação realizada com sucesso!')
                 })
-                .error((data) => msgs.addError(data.errors))
+                .catch((response) => msgs.addError(response.data.errors))
         }
 
         function create() {
             $http.post(url, vm.billingCycle)
-                .success((response) => {
-                    // refresh();
+                .then((response) => {
+                    refresh();
                     msgs.addSuccess('Operação realizada com sucesso!')
                 })
-                .error((data) => msgs.addError(data.errors))
+                .catch((response) => msgs.addError(response.data.errors))
         }
 
         function remove() {
             const resource = `${url}/${vm.billingCycle._id}`
             $http.delete(resource, vm.billingCycle)
-                .success((response) => {
+                .then((response) => {
                     refresh();
                     msgs.addSuccess('Operação realizada com sucesso!')
                 })
-                .error((data) => msgs.addError(data.errors))
+                .catch((response) => msgs.addError(response.data.errors))
         }
 
         function addCredit(index) {
