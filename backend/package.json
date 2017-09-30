@@ -17,7 +17,9 @@
     "mongoose": "^4.7.0",
     "mongoose-paginate": "^5.0.3",
     "node-restful": "^0.2.5",
-    "pm2": "^2.1.5"
+    "pm2": "^2.1.5",
+    "bcrypt": "^1.0.2",
+    "jsonwebtoken": "^7.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
