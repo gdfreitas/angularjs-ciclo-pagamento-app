@@ -4,8 +4,9 @@ const concat = require('gulp-concat')
 const uglifycss = require('gulp-uglifycss')
 const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
+const less = require('gulp-less')
 
-gulp.task('app', ['app.html', 'app.css', 'app.js', 'app.assets'])
+gulp.task('app', ['app.html','app.less', 'app.css', 'app.js', 'app.assets'])
 
 // html
 gulp.task('app.html', () => {
@@ -20,6 +21,15 @@ gulp.task('app.css', () => {
         .pipe(uglifycss({ 'uglyComments': true }))
         .pipe(concat('app.min.css'))
         .pipe(gulp.dest('public/assets/css'))
+})
+
+// less
+gulp.task('app.less', () => {
+    gulp.src('app/**/*.less')
+        .pipe(less())
+        .pipe(uglifycss({ 'uglyComments': true }))
+        .pipe(concat('less.min.css'))
+        .pipe(gulp.dest('public/assets/css'));
 })
 
 // javascripts
