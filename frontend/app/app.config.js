@@ -1,35 +1,16 @@
 angular
     .module('primeiraApp')
-    .config(RouterConfigProvider)
     .run(RouterRunProvider);
 
-RouterConfigProvider.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
+RouterRunProvider.$inject = ['$log','$rootScope', '$http', '$location', '$window', 'auth'];
 
-function RouterConfigProvider($stateProvider, $urlProvider, $httpProvider) {
-
-    $stateProvider
-        .state('dashboard', {
-            url: '/dashboard',
-            templateUrl: 'dashboard/dashboard.html'
-        })
-        .state('billingCycle', {
-            url: '/billingCycles?page',
-            templateUrl: 'billingCycle/tabs.html'
-        })
-
-    //$urlProvider.otherwise('/dashboard')
-
-    $httpProvider.interceptors.push('handleResponseError')
-
-}
-
-RouterRunProvider.$inject = ['$rootScope', '$http', '$location', '$window', 'auth'];
-
-function RouterRunProvider($rootScope, $http, $location, $window, auth) {
+function RouterRunProvider($log, $rootScope, $http, $location, $window, auth) {
     validateUser();
 
-    $rootScope.$on('$locationChangeStart', () => {
-        console.log('$locationChangeStart');
+    $rootScope.$on('$locationChangeStart', (event, next, current) => {
+        $log.debug('$locationChangeStart');
+        $log.debug(next);
+        $log.debug(current);
         validateUser()
     });
 

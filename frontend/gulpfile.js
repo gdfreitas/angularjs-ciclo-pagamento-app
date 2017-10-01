@@ -1,9 +1,9 @@
 const gulp = require('gulp')
 const util = require('gulp-util')
 
-require('./gulpTasks/app')
-require('./gulpTasks/deps')
-require('./gulpTasks/server')
+require('./build/app')
+require('./build/deps')
+require('./build/server')
 
 gulp.task('default', () => {
     if (util.env.production) {

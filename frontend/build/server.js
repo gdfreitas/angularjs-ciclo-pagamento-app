@@ -13,7 +13,8 @@ gulp.task('server', ['watch'], () => {
 
 gulp.task('watch', () => {
     watch('app/**/*.html', () => gulp.start('app.html'))
-    watch('app/**/*.css', () => gulp.start('app.css'))
     watch('app/**/*.js', () => gulp.start('app.js'))
-    watch('assets/**/*.*', () => gulp.start('app.assets'))
+    watch('resources/imgs/**/*.*', () => gulp.start('app.assets'))
+    watch('resources/styles/*.css', () => gulp.start('app.css'))
+    watch('resources/styles/*.less', () => gulp.start('app.less'))
 })
