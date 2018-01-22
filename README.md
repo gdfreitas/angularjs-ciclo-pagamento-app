@@ -51,7 +51,30 @@ TODO
 
 # Dependências
 
-[babel-preset-es2015](https://babeljs.io/docs/plugins/preset-es2015/) - plugin para compilar ES6 (ES2015) para ES5
+[angular 1x](https://docs.angularjs.org/api) - framework para criação de SPA (single-page applications)
+
+[angular-animate](https://docs.angularjs.org/guide/animations) - biblioteca nativa do angularjs para implementação de animações via css
+
+[angular-toastr](https://github.com/Foxandxss/angular-toastr) - implementação para angular da biblioteca de notificações `toastr`
+
+[angular-ui-router](https://ui-router.github.io/ng1/) - controle de rotas baseados em estados.
+
+[gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md) - automatizador de tarefas, orquestra todo o build da aplicação
+[gulp-append](https://www.npmjs.com/package/gulp-append) - utlitário para adicionar dados à um arquivo
+[gulp-babel](https://github.com/babel/gulp-babel) - integração do babel com o gulp
+[gulp-concat](https://www.npmjs.com/package/gulp-concat) - concatena arquivos
+[gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin) - minifíca html
+[gulp-less](https://www.npmjs.com/package/gulp-less) - transforma arquivos less em css
+[gulp-uglify](https://www.npmjs.com/package/gulp-uglify) - minifica arquivos js
+[gulp-uglifycss](https://www.npmjs.com/package/gulp-uglifycss) - minifica arquivos css
+[gulp-util](https://github.com/gulpjs/gulp-util) - funções utilitárias para gulp
+[gulp-watch](https://www.npmjs.com/package/gulp-watch) - observa alterações em arquivos
+[gulp-webserver](https://github.com/schickling/gulp-webserver) - cria um servidor em 
+[run-sequence](https://www.npmjs.com/package/run-sequence) - executa tasks do gulp em uma sequência
+
+[babel-core](https://babeljs.io/docs/core-packages/) - transpiler de sintáxes (jsx), ES6, ES7, etc para javascript suportado nos browsers atuais.
+
+[babel-preset-env](https://github.com/babel/babel-preset-env/) - plugin para compilar varios presets antigos (Ex: ES6 (ES2015) para ES5)
 
 [admin-lte](https://adminlte.io/docs/2.4/layout) - tema opensource para dashboards, utiliza bootstrap 3 e provê bastante componentes para utilização no layout.
 

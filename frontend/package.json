@@ -19,6 +19,7 @@
     "babel-preset-env": "1.6.0",
     "font-awesome": "4.7.0",
     "gulp": "3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
     "gulp-append": "^0.3.4",
     "gulp-babel": "7.0.0",
     "gulp-concat": "2.6.1",

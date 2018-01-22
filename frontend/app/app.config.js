@@ -1,8 +1,11 @@
 angular
     .module('primeiraApp')
+    .run(['$rootScope', 'consts', function ($rootScope, consts) {
+        $rootScope.consts = consts
+    }])
     .run(RouterRunProvider);
 
-RouterRunProvider.$inject = ['$log','$rootScope', '$http', '$location', '$window', 'auth'];
+RouterRunProvider.$inject = ['$log', '$rootScope', '$http', '$location', '$window', 'auth'];
 
 function RouterRunProvider($log, $rootScope, $http, $location, $window, auth) {
     validateUser();
