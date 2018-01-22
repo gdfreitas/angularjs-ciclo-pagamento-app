@@ -5,7 +5,7 @@
   "main": "loader.js",
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start loader.js --name backend"
+    "prod": "pm2 start loader.js --name backend"
   },
   "author": "gabriel.freitas",
   "license": "ISC",
@@ -13,15 +13,15 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-query-int": "^1.0.1",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.4",
     "mongoose": "^4.7.0",
     "mongoose-paginate": "^5.0.3",
     "node-restful": "^0.2.5",
-    "pm2": "^2.1.5",
-    "bcrypt": "^1.0.2",
-    "jsonwebtoken": "^7.3.0"
+    "pm2": "^2.1.5"
   },
   "devDependencies": {
+    "bcrypt": "^1.0.2",
+    "jsonwebtoken": "^7.3.0",
     "nodemon": "^1.11.0"
   }
 }
