@@ -1,6 +1,6 @@
 # Aplicação Stack MEAN
 
-Construindo uma aplicação utilizando o agregado de tecnolgias da stack MEAN para aprendizagem.
+Construindo uma aplicação utilizando o agregado de tecnologias da stack MEAN para aprendizagem.
 
 # BACKEND
 
@@ -47,7 +47,6 @@ module.exports = {
 ```
 
 # FRONTEND
-TODO
 
 # Dependências
 
@@ -60,16 +59,27 @@ TODO
 [angular-ui-router](https://ui-router.github.io/ng1/) - controle de rotas baseados em estados.
 
 [gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md) - automatizador de tarefas, orquestra todo o build da aplicação
+
 [gulp-append](https://www.npmjs.com/package/gulp-append) - utlitário para adicionar dados à um arquivo
+
 [gulp-babel](https://github.com/babel/gulp-babel) - integração do babel com o gulp
+
 [gulp-concat](https://www.npmjs.com/package/gulp-concat) - concatena arquivos
+
 [gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin) - minifíca html
+
 [gulp-less](https://www.npmjs.com/package/gulp-less) - transforma arquivos less em css
+
 [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) - minifica arquivos js
+
 [gulp-uglifycss](https://www.npmjs.com/package/gulp-uglifycss) - minifica arquivos css
+
 [gulp-util](https://github.com/gulpjs/gulp-util) - funções utilitárias para gulp
+
 [gulp-watch](https://www.npmjs.com/package/gulp-watch) - observa alterações em arquivos
+
 [gulp-webserver](https://github.com/schickling/gulp-webserver) - cria um servidor em 
+
 [run-sequence](https://www.npmjs.com/package/run-sequence) - executa tasks do gulp em uma sequência
 
 [babel-core](https://babeljs.io/docs/core-packages/) - transpiler de sintáxes (jsx), ES6, ES7, etc para javascript suportado nos browsers atuais.
@@ -83,7 +93,11 @@ TODO
 [Lodash](https://lodash.com/docs/) - biblioteca contendo inúmeros métodos que auxiliam na manipulação de arrays, objetos, strings, etc em javascript.
 
 # Rodando a aplicação
-TODO
+`mongod` inicializar o banco de dados mongoDB
+
+`./backend npm run prod && pm2 monit` inicializar api de backend e abrir monitoração realtime do pm2
+
+`./frontend npm run prod` gerar os arquivos estáticos na pasta `./public` 
 
 # Extras
 
