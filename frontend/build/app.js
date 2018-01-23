@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
 const less = require('gulp-less')
 const angularFileSorter = require('gulp-angular-filesort')
+const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('app', ['app.html', 'app.css', 'app.less', 'app.js', 'app.assets'])
 
@@ -43,10 +44,12 @@ gulp.task('app.less', () => {
 // modules, constants, config, factories, states, controllers, components
 gulp.task('app.js', () => {
    return gulp.src('app/**/*.js')
-      .pipe(babel({ presets: ['env'] }))
-      .pipe(angularFileSorter())
-      .pipe(uglify())
-      .pipe(concat('app.min.js'))
+      .pipe(sourcemaps.init(/* {identityMap: true, loadMaps:true} */))
+            .pipe(babel({ presets: ['env'] }))
+            .pipe(angularFileSorter())
+            .pipe(uglify())
+            .pipe(concat('app.min.js'))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest('public/assets/js'))
 })
 
