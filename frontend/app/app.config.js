@@ -16,7 +16,7 @@ function RouterRunProvider($log, $rootScope, $http, $location, $window, auth) {
 
     function validateUser() {
         const user = auth.getUser()
-        const authPage = 'auth.html'
+        const authPage = 'core/auth/auth.html'
         const isAuthPage = $window.location.href.includes(authPage)
 
         if (!user && !isAuthPage) {
@@ -29,7 +29,6 @@ function RouterRunProvider($log, $rootScope, $http, $location, $window, auth) {
                     user.isValid = true;
                     $http.defaults.headers.common.Authorization = user.token;
                     isAuthPage ? $window.location.href = '/' : $location.path('/dashboard')
-
                 }
             })
         }

@@ -8,7 +8,6 @@
             },
             controller: ['$location', function ($location) {
                 this.$onInit = function () {
-                    console.log(this.pages);
                     const pages = parseInt(this.pages) || 1;
                     this.pagesArray = Array(pages).fill(0).map((elemento, indice) => indice + 1);
                 }

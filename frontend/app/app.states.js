@@ -9,11 +9,11 @@ function RouterConfigProvider($stateProvider, $urlProvider, $httpProvider) {
     $stateProvider
         .state('dashboard', {
             url: '/dashboard',
-            templateUrl: 'dashboard/dashboard.html'
+            templateUrl: './modules/dashboard/dashboard.html'
         })
         .state('billingCycle', {
             url: '/billingCycles?page',
-            templateUrl: 'billing-cycle/tabs.html'
+            templateUrl: './modules/billing-cycle/tabs.html'
         })
 
     //$urlProvider.otherwise('/dashboard')
