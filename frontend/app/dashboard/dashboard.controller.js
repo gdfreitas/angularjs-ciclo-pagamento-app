@@ -3,9 +3,9 @@
         .module('primeiraApp')
         .controller('DashboardCtrl', DashboardController)
 
-    DashboardController.$inject = ['$scope', '$http']
+    DashboardController.$inject = ['$scope', '$http', 'consts']
 
-    function DashboardController($scope, $http) {
+    function DashboardController($scope, $http, consts) {
         const vm = this
 
         Object.assign(vm, {
@@ -13,11 +13,9 @@
         })
 
         function getSummary() {
-            const url = 'http://localhost:3003/api/billingSummary' // hardcoded criar constants
-
-            $http.get(url).then((response) => { // destructuring e default values
+            $http.get(`${consts.apiUrl}/billingSummary`).then((response) => { // destructuring e default values
                 const { credit = 0, debt = 0 } = response.data;
-                
+
                 vm.credit = credit;
                 vm.debt = debt;
                 vm.total = credit - debt;

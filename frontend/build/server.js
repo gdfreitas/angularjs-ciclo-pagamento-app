@@ -6,7 +6,7 @@ gulp.task('server', ['watch'], () => {
    gulp.src('public')
       .pipe(webserver({
          livereload: true,
-         port: 3000,
+         port: 9000,
          open: true
       }))
 })

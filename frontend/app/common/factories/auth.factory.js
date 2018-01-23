@@ -1,10 +1,10 @@
 (function () {
 
-    angular.module('primeiraApp').factory('auth', [
-        '$http',
-        'consts',
-        AuthFactory
-    ])
+    angular
+        .module('primeiraApp')
+        .factory('auth', AuthFactory)
+
+    AuthFactory.$inject = ['$http', 'consts']
 
     function AuthFactory($http, consts) {
 
@@ -15,7 +15,7 @@
                 user = JSON.parse(localStorage.getItem(consts.userKey))
                 $http.defaults.headers.common.Authorization = user ? user.token : null
             }
-            
+
             return user
         }
 
@@ -50,15 +50,20 @@
             if (token) {
                 $http.post(`${consts.oapiUrl}/validateToken`, { token })
                     .then(resp => {
+
                         if (!resp.data.valid) {
                             logout()
                         } else {
                             $http.defaults.headers.common.Authorization = getUser().token
                         }
+
                         if (callback) callback(null, resp.data.valid)
-                    }).catch(function (resp) {
+
+                    })
+                    .catch(function (resp) {
                         if (callback) callback(resp.data.errors)
                     })
+
             } else {
                 if (callback) callback('Token inválido.')
             }

@@ -11,9 +11,6 @@ function RouterRunProvider($log, $rootScope, $http, $location, $window, auth) {
     validateUser();
 
     $rootScope.$on('$locationChangeStart', (event, next, current) => {
-        $log.debug('$locationChangeStart');
-        $log.debug(next);
-        $log.debug(current);
         validateUser()
     });
 
