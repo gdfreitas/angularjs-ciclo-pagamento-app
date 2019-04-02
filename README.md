@@ -1,46 +1,16 @@
-# Aplicação Stack MEAN
+# Ciclo de Pagamentos em Angular.js 1.x
 
-Construindo uma aplicação utilizando o agregado de tecnologias da stack MEAN para aprendizagem.
+Construindo uma aplicação frontend para interagir com uma API de Ciclo de Pagamentos, utilizando as tecnologias em torno da stack MEAN.
 
-# BACKEND
+## Requisitos
 
-## Resources
+Possuir uma [Api de Ciclos de Pagamentos](https://github.com/gdfreitas/ciclo-pagamento-api) rodando;
 
-Recursos disponíveis para consulta, criação, alteração e remoção de ciclos de pagamento. Consulta de quantidade de ciclos para paginação e consulta de sumário para os widgets de dashboard.
+## Rodando aplicação
 
-`GET`      @ /api/billingCycles <br />
-`GET`      @ /api/billingCycles/{id} <br />
-`POST`     @ /api/billingCycles <br />
-`PUT`      @ /api/billingCycles/{id} <br />
-`DELETE`   @ /api/billingCycles/{id} <br />
-`GET`      @ /api/billingCycles/count <br />
-`GET`      @ /api/billingCycles/summary <br />
+`npm run prod` gerar os arquivos estáticos na pasta `./public`;
 
-## Dependências
-
-[MongoDB](https://docs.mongodb.com/) - base de dados NoSQL, alta performance, sem esquemas e orientado à documentos. <br />
-[NodeJS](https://nodejs.org/en/docs/) - interpretador de código javascript no lado servidor.<br />
-[Express](http://expressjs.com/en/4x/api.html) - servidor web não organizado e minimalista para NodeJS<br />
-[express-query-init](https://www.npmjs.com/package/express-query-int) - middleware auxiliar para fazer o parse de query parameters numéricos<br />
-[mongoose](http://mongoosejs.com/docs/guide.html) - api de mapeamento dos objetos javascript para documentos (ODM - Object Data Mapping) e sistemas de conversão de tipos, validaÇão, criação de consultas e hooks para lógicas de negócio.<br />
-[mongoose-paginate](https://github.com/edwardhotchkiss/mongoose-paginate) - auxiliar para montar paginações em consultas ao banco de dados.<br />
-[noderestful](https://github.com/baugarten/node-restful) - biblioteca para auxiliar na criação de rotas para recursos no padrão REST no servidor `express`.<br />
-[Lodash](https://lodash.com/docs/) - biblioteca contendo inúmeros métodos que auxiliam na manipulação de arrays, objetos, strings, etc em javascript.<br />
-[body-parser](https://github.com/expressjs/body-parser) - middleware para fazer o parse do body das requests.<br /><br />
-[pm2](http://pm2.keymetrics.io/) - gerenciador de processos para aplicações NodeJ. Gerenciamento de memória, de cores, quedas na aplicação, etc.<br />
-
-## Configuração
-### Criar arquivo `.env` com a secret key
-
-```
-module.exports = {
-  authSecret: 'chaveSecretaMuitoLoucaCheiaDeCaracteresLerDocumentacao'
-}
-```
-
-# FRONTEND
-
-# Dependências
+# Recursos utilizados
 
 [angular 1x](https://docs.angularjs.org/api) - framework para criação de SPA (single-page applications)<br />
 [angular-animate](https://docs.angularjs.org/guide/animations) - biblioteca nativa do angularjs para implementação de animações via css<br />
@@ -64,14 +34,7 @@ module.exports = {
 [font-awesome](http://fontawesome.io/icons/) - biblioteca de ícones<br />
 [Lodash](https://lodash.com/docs/) - biblioteca contendo inúmeros métodos que auxiliam na manipulação de arrays, objetos, strings, etc em javascript.<br />
 
-# Rodando a aplicação
-`mongod` inicializar o banco de dados mongoDB
-
-`./backend npm run prod && pm2 monit` inicializar api de backend e abrir monitoração realtime do pm2
-
-`./frontend npm run prod` gerar os arquivos estáticos na pasta `./public` 
-
-# Extras
+# Referências
 
 [JsonWebToken implementation for node.js](https://github.com/auth0/node-jsonwebtoken)<br />
 [What are requirements for HMAC secret key?](https://security.stackexchange.com/questions/95972/what-are-requirements-for-hmac-secret-key)<br />
