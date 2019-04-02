@@ -1,0 +1,30 @@
+<div class="col-xs-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="debt in ctrl.billingCycle.debts">
+                <td>
+                    <input ng-model="debt.name" class="form-control" placeholder="Informe o Nome" ng-readonly="ctrl.tabDelete" />
+                </td>
+                <td>
+                    <input ng-model="debt.value" class="form-control" placeholder="Informe a Valor" ng-readonly="ctrl.tabDelete" ng-change="ctrl.calculateValues()" type="number" />
+                </td>
+                <td>
+                    <input ng-model="debt.status" class="form-control" placeholder="PAGO, PENDENTE ou AGENDADO" ng-readonly="ctrl.tabDelete" />
+                </td>
+                <td class="table-actions">
+                    <button class="btn btn-success" ng-click="ctrl.addDebt($index)" ng-disabled="ctrl.tabDelete"><i class="fa fa-plus"></i></button>
+                    <button class="btn btn-warning" ng-click="ctrl.cloneDebt($index, debt)" ng-disabled="ctrl.tabDelete"><i class="fa fa-clone"></i></button>
+                    <button class="btn btn-danger" ng-click="ctrl.deleteDebt($index)" ng-disabled="ctrl.tabDelete"><i class="fa fa-trash-o"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
